@@ -1,0 +1,209 @@
+@keyframes boardAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.title{
+    color:white;
+
+}
+
+.board {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    grid-gap: 0px;
+    /* border: 2px solid #333; */
+    animation: boardAppear 0.5s ease-out;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #ffffff;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0;
+    animation: cellAppear 0.5s ease-out forwards;
+    border-radius: 10px;    
+    margin: 3px;
+
+
+    
+}
+.cell:hover {
+    background-color: #d2d8f7;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+@keyframes winnerAnimation {
+  0% {
+    transform: scale(1);
+    color: white;
+  }
+  50% {
+    transform: scale(1.1);
+    color: #FFD700; /* Gold color */
+  }
+  100% {
+    transform: scale(1);
+    color: white;
+  }
+}
+
+.winner {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: white;
+  animation: winnerAnimation 2s ease-in-out infinite;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.current-player{
+    color:white;
+}
+
+.error {
+  color: white;
+  background-color: rgba(255, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+@keyframes cellAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+.cell:nth-child(1) { animation-delay: 0.1s; }
+.cell:nth-child(2) { animation-delay: 0.2s; }
+.cell:nth-child(3) { animation-delay: 0.3s; }
+.cell:nth-child(4) { animation-delay: 0.4s; }
+.cell:nth-child(5) { animation-delay: 0.5s; }
+.cell:nth-child(6) { animation-delay: 0.6s; }
+.cell:nth-child(7) { animation-delay: 0.7s; }
+.cell:nth-child(8) { animation-delay: 0.8s; }
+.cell:nth-child(9) { animation-delay: 0.9s; }
+
+@keyframes buttonAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(92, 232, 97);
+    background-color: #3b18d8;
+    border: 5px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.3s ease;
+    animation: buttonAppear 0.5s ease-out;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#reset {
+    background-color: #008CBA;
+}
+
+#reset:hover {
+    background-color: #007A9E;
+}
+
+#quit {
+    background-color: #f44336;
+}
+
+#quit:hover {
+    background-color: #d32f2f;
+}
+
+
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.cell img {
+  width: 60%; /* Reduced from 80% */
+  height: 60%; /* Reduced from 80% */
+  animation: popIn 0.3s ease-out forwards;
+}
+
+@keyframes winnerAnimation {
+  0% {
+    transform: scale(1);
+    color: white;
+  }
+  50% {
+    transform: scale(1.1);
+    color: #FFD700; /* Gold color */
+  }
+  100% {
+    transform: scale(1);
+    color: white;
+  }
+}
+
+.winner {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: white;
+  animation: winnerAnimation 2s ease-in-out infinite;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
